@@ -140,7 +140,7 @@ export function ChatPanel({
                 onKeyDown={onSubmit}
                 rows={1}
                 value={input}
-                onChange={e => setInput(e.target.value.slice(0, 8000))}
+                onChange={e => setInput(e.target.value.slice(0, 999999))}
                 placeholder={voiceListening ? '持续对话中...对话完成说“发送”即可' : 'Shift + Enter 换行，输入 / 选择提示词'}
                 spellCheck={false}
                 className="message-input min-h-[24px] w-full text-base resize-none bg-transparent focus-within:outline-none"
@@ -155,7 +155,7 @@ export function ChatPanel({
                 </ChatImage>
               </div>
               <div className="flex gap-2 items-center">
-                <div className="letter-counter"><span>{input.length}</span>/8000</div>
+                <div className="letter-counter"><span>{input.length}</span>/999999</div>
                 <button type="submit" className="action-button" onClick={onSend}>
                   <SVG alt="send" src={input.length ? SendFillIcon : SendIcon} width={18} height={20} />
                 </button>
